@@ -9,18 +9,26 @@
         <vm:PhoneViewModel />
     </ContentPage.BindingContext>
 
-    <ListView ItemsSource="{ Binding PhonesList }" HasUnevenRows="True">
+    <StackLayout>
 
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell>
-                    <StackLayout Padding="20">
-                        <Label Text="{ Binding Model}" />
-                        <Label Text="{ Binding Brand} " />
-                    </StackLayout>
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
+        <local:CustomListView 
+            ItemsSource="{ Binding PhonesList }" 
+            ItemClickCommand="{ Binding PhonesListTappedCommand }"
+            HasUnevenRows="True">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="20">
+                            <Label Text="{ Binding Model, Mode=TwoWay } " />
+                            <Label Text="{ Binding Brand, Mode=TwoWay } " />
+                            <Label Text="{ Binding Tapped, Mode=TwoWay} " />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </local:CustomListView>
         
-    </ListView>
+    </StackLayout>
 </ContentPage>
