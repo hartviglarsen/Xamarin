@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MVVM"
+             xmlns:vm="clr-namespace:MVVM.ViewModels"
+             x:Class="MVVM.Views.MainPage">
+
+    <ContentPage.BindingContext>
+        <vm:PhoneViewModel />
+    </ContentPage.BindingContext>
+
+    <ListView ItemsSource="{ Binding PhonesList }" HasUnevenRows="True">
+
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Padding="20">
+                        <Label Text="{ Binding Model}" />
+                        <Label Text="{ Binding Brand} " />
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+        
+    </ListView>
+</ContentPage>
