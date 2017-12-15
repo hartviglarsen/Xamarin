@@ -16,11 +16,13 @@ namespace MVVM.Services
             {
                 new Phone
                 {
+                    ID = 1,
                     Model = "iPhone X",
                     Brand = "Apple"
                 },
                 new Phone
                 {
+                    ID = 2,
                     Model = "Galaxy S7",
                     Brand = "Samsung"
                 }
