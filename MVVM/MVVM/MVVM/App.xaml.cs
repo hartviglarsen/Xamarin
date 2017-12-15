@@ -5,6 +5,8 @@ using System.Text;
 
 using Xamarin.Forms;
 
+using MVVM.Views;
+
 namespace MVVM
 {
 	public partial class App : Application
@@ -13,7 +15,7 @@ namespace MVVM
 		{
 			InitializeComponent();
 
-			MainPage = new MVVM.MainPage();
+			MainPage = new MainPage();
 		}
 
 		protected override void OnStart ()
