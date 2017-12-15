@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 using MVVM.Models;
@@ -9,9 +10,9 @@ namespace MVVM.Services
     public class PhoneService
     {
 
-        public List<Phone> GetPhones()
+        public ObservableCollection<Phone> GetPhones()
         {
-            var list = new List<Phone>
+            var list = new ObservableCollection<Phone>
             {
                 new Phone
                 {
